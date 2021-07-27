@@ -11,7 +11,7 @@ export const cadastro = (email, password) => {
       // Signed in
       const user = userCredential.user;
       console.log(user);
-      console.log('Cadastroooo!!');
+      console.log('Cadastroooo')
       // ...
     })
     .catch((error) => {
@@ -33,11 +33,8 @@ export const cadastro = (email, password) => {
 //     const errorMessage = error.message;
 //   });
 
-
 // firebase.auth().signOut().then(() => {
 //   // Sign-out successful.
 // }).catch((error) => {
 //   // An error happened.
 // });
-
-// export default cadastro();

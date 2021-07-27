@@ -1,0 +1,28 @@
+header, footer {
+    background-color: #e1907f;
+    display: flex;
+    height: 100px;
+    align-items: center;
+    justify-content: space-around;
+}
+
+footer {
+    justify-content: center;
+    align-items: center;
+}
+
+.logo{
+    height: 50px;
+    width: 50px;
+}
+
+.section_icon{
+    height: 40px;
+    width: 40px;
+    border-radius: 50px;
+}
+
+.copyright{
+    height: 12px;
+    width: 12px;
+}
