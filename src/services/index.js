@@ -1,11 +1,12 @@
 // export {firebase.auth().createUserWithEmailAndPassword(email, password)}
 
-export const signUp = (email, password, errorMessage, access) => {
+export const signUp = (email, password, errorMessage) => {
   firebase.auth().createUserWithEmailAndPassword(email, password)
     .then((userCredential) => {
       // Signed in
+      console.log('oi');
       const user = userCredential.user;
-      return access();
+      window.location.hash = '#profile';
       // ..
     })
     .catch((error) => {
@@ -19,6 +20,8 @@ export const signIn = (email, password) => {
     .then((userCredential) => {
       // Signed in
       const user = userCredential.user;
+      console.log("userCredential");
+      window.location.hash = '#feed';
       // ...
     })
     .catch((error) => {

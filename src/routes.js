@@ -1,32 +1,24 @@
-import loginScreen from './pages/login/index.js';
-import signUpScreen from './pages/signUp/index.js';
-import profileScreen from './pages/profile/index.js';
+import feed from './pages/feed/feed.js';
+import perfil from './pages/perfil';
+import loginScreen from './pages/tela inicial/LogIn.js';
 
-const routes = {
-  '/': loginScreen,
-  '/signUp': signUpScreen,
-  '/profile': profileScreen,
+const main = document.getElementById('root');
+
+export default () => {
+  window.addEventListener('hashchange', () => {
+    main.innerHTML = '';
+    switch (window.location.hash) {
+      case '':
+        main.appendChild(loginScreen());
+        break;
+      case '#feed':
+        main.appendChild(feed());
+        break;
+      case '#perfil':
+        main.appendChild(perfil());
+        break;
+      default:
+        break;
+    }
+  });
 };
-
-export const render = (pathname) => {
-  const main = document.getElementById('root');
-  main.innerHTML = '';
-  window.history.pushState({}, null, window.location + pathname);
-
-  const templatePage = routes[window.location.pathname];
-  main.appendChild(templatePage);
-  console.log('renderizou?');
-};
-
-// const routes = () => {
-//   window.addEventListener('popstate', routes);
-//   const routesPaths = {
-//     '/': signUpScreen,
-//     '/signUp': signUpScreen,
-//   };
-
-//   const main = document.getElementById('root');
-//   main.innerHTML = '';
-
-//   return (routesPaths[window.location.pathname]());
-// };

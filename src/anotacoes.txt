@@ -1,0 +1,164 @@
+table with some vegetables
+<a href="https://www.freepik.com/photos/food">Food photo created by onlyyouqj - www.freepik.com</a>
+
+food with ingredients
+<a href='https://www.freepik.com/photos/food'>Food photo created by valeria_aksakova - www.freepik.com</a>
+
+desenho
+<a href='https://www.freepik.com/vectors/food'>Food vector created by macrovector - www.freepik.com</a>
+
+
+google logo
+<img src="https://img.icons8.com/color/48/000000/google-logo.png"/>
+
+//<button type="button" id="createAcc" class="btn-loginScreen">Criar Conta</button>
+
+
+imagem tela inicial op1
+<img class="loginImage" src="image/table-with-some-vegetablesVertical.jpg">
+
+<img class="loginImage" src="image/tabua de legumes cleared.jpg">
+
+ <a class="credit" href="https://www.freepik.com/photos/food">Food photo created by onlyyouqj - www.freepik.com</a>
+
+ <div class="introduction">
+    <p> Compartilhe suas receitas, poste fotos de seus pratos, busque novas inspirações e venha participar desta nova rede! É um festival de comida! </p>
+  </div>
+
+  .introduction {
+  position: relative;
+  border-radius: 5px;
+  background-color: #e427ab;
+  opacity: 0.9;
+  margin-top: 25% auto auto auto;
+  width: 90%;
+}
+
+
+  // const elements = document.getElementById('signUp-form').elements;
+  // console.log(elements);
+
+  // let i, element;
+  
+  // for (i = 0; element = elements[i] ; i++) {
+    
+  //   if (element.type === 'text' && element.value === '') {
+  //     notice.innerHTML = 'Por favor, escreva seu nome';
+  //   }
+  //   if (element.type === 'email' && element.value === '') {
+  //     notice.innerHTML = 'Insira um e-mail válido';
+  //   }
+  //   if (element.type === 'password' && element.value === '') {
+  //     notice.innerHTML = 'Insira uma senha com no mínimo 6 caracteres';
+  //   }
+  //   notice.innerHTML = ;
+  // }
+
+
+
+
+auth/weak-password Password should be at least 6 characters
+catch((error) => error)
+
+// if (signUpName === '') {
+    //   notice.innerHTML = 'Por favor, escreva seu nome';
+    // } else if (signUpEmail === '' || signUpPassword.length < 6) {
+    //   notice.innerHTML = 'Insira um e-mail válido';
+    // } else if (signUpPassword === '') {
+    //   notice.innerHTML = 'Insira uma senha com no mínimo 6 caracteres';
+    // } else if (signUpPassword !== signUpRepeatPassword) {
+    //   notice.innerHTML = 'As senhas são diferentes';
+    // } else {
+    //   notice.innerHTML = '';
+    //   signUp(signUpEmail, signUpPassword);
+    // }
+
+
+    const errorMessage = error.message;
+      console.log('Deu errado', errorCode, errorMessage);
+
+      // const main = document.getElementById('root');
+  // main.innerHTML = '';
+  // return main.appendChild(routesPaths[window.location.pathname]());
+
+  window.addEventListener('popstate', (event) => {
+  routes();
+  event.state;
+});
+
+
+    if (event.state) {
+      main = event.state.routesPaths[window.location.pathname]();
+    }
+
+    // window.addEventListener('load', () => {
+//   main.appendChild(loginScreen());
+//   routes();
+
+//   document.getElementById('enter-acc').addEventListener('click', () => {
+//     history.pushState({ page_id: 2 }, null, '/signUp');
+//     routes();
+
+//     document.getElementById('btn-signUp').addEventListener('click', (event) => {
+//       event.preventDefault();
+
+//       const signUpName = document.getElementById('signUp-name').value;
+//       const signUpEmail = document.getElementById('signUp-email').value;
+//       const signUpPassword = document.getElementById('signUp-password').value;
+//       const signUpRepeatPassword = document.getElementById('repeat-password').value;
+//       const notice = document.getElementById('notice');
+
+//       function error(err) {
+//         if (err === 'auth/weak-password') {
+//           notice.innerHTML = 'A senha deve ter no mínimo 6 caracteres';
+//         }
+//       }
+
+//       function access() {
+//         history.pushState({ page_id: 1 }, null, '/');
+//         routes();
+//       }
+
+//       signUp(signUpEmail, signUpPassword, error, access);
+//     });
+//   });
+// });
+
+
+const routes = (main) => {
+  const routesPaths = {
+    '/': loginScreen,
+    '/signUp': signUpScreen,
+    '/profile': profileScreen,
+  };
+
+  const root = main;
+  root.innerHTML = '';
+
+  window.addEventListener('popstate', (event) => {
+    if (event.state === null) { //página inicial
+      routesPaths['/']();
+    } else { //páginas adicionadas por pushState
+      routesPaths[window.location.pathname]();
+    }
+  });
+};
+
+
+
+  window.addEventListener('popstate', (event) => {
+    console.log('popstate');
+    if (event.state === null) { //página inicial
+      console.log('null');// routesPaths['/']();
+      render('/');
+    } else { //páginas adicionadas por pushState
+      // routesPaths[window.location.pathname]();
+      console.log(event.estate);
+      render(event.estate);
+    }
+  });
+
+  function access() {
+    console.log('pushStateProfile');
+    window.location.hash = '#signUp';
+  }
