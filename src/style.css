@@ -16,19 +16,34 @@
   --beeswax: 240, 219, 170;
 }
 
+html, body {
+  height: 100%;
+}
+
 body {
   font-family: 'Roboto', sans-serif;
   background-color: var(--pantone-142c);
   background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
 }
 
-.screenContainer {
+#root {
+  flex: 1 0 auto;
+}
+
+.screenContainer, .screenContainerBody {
   display: block;
 }
 
 .div-width90 {
   width: 90%;
   margin: auto;
+}
+
+.postRecipeSection  {
+  margin-top: 90px;
+  margin-bottom: 25px;
 }
 
 .initialForm, .postRecipeForm {
@@ -42,7 +57,7 @@ body {
   display: block;
 }
 
-.signIn-input, .signUp-input {
+.signIn-input, .signUp-input, .inputProfile {
   position: relative;
   width: 100%;
   height: 40px;
@@ -59,7 +74,7 @@ body {
   margin: 1rem auto;
 }
 
-.btn-login {
+.btn-login, .saveChanges {
   position: relative;
   width: 100%;
   height: 40px;
@@ -120,6 +135,24 @@ button::before {
   color: rgb(51, 51, 211);
 }
 
+.btn-uploadImage {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 15px auto;
+  border: 1px solid #000;
+  border-radius: 5px;
+  background-color: var(--limeade);
+  letter-spacing: 1px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.btn-uploadImage:hover {
+  cursor: pointer;
+}
 /* =================================  Página de Reset Password: ================================ */
 
 #resetPassword-email {
@@ -144,6 +177,7 @@ button::before {
   display: block;
   background-color: rgba(var(--beeswax));
   margin: 1rem auto ;
+  padding: 5px;
 }
 
 .info-recipe-container {
@@ -260,10 +294,6 @@ button::before {
   justify-content: space-evenly;
 }
 
-button:hover {
-  cursor: pointer;
-}
-
 .btn-popup {
   width: 4rem;
   height: 2rem;
@@ -285,8 +315,15 @@ button:hover {
   border: none;
 }
 
+input[type="file"] {
+  display: none;
+}
 
 /* =================================  Página de Perfil: =================================== */
+
+.padding-bottom25{
+  padding-bottom: 25px;
+}
 
 .profileInfo img {
   width: 80px;
@@ -316,14 +353,15 @@ button:hover {
 .profile-nav-bar{
   background-color: #e47127;
   width: 244px;
-  height: 260px;
+  height: 290px;
   border-radius: 20px;
   display: flex;
   flex-flow: column;
   align-items: center;
   padding: 5px;
   justify-items: center;
-  margin-top: 71px;
+  margin-top: 60px;
+  box-shadow: 3px 3px 3px black;
 }
 
 .profile-nav-bar-options{
@@ -332,7 +370,11 @@ button:hover {
   height: 40px;
   text-align: center;
   padding: 10px;
-  color: black;
+  color: var(--pantone-142c);
+  border-radius: 5px;
+  background-color: var(--red-plum);
+  width: 100%;
+  margin: 1rem auto;
 }
 
 .recipes, .editProfile{
@@ -358,15 +400,12 @@ button:hover {
 .editProfileForm{
   position: relative;
   top: 20px;
-  /* bottom: 218px;
-  left: 300px; */
 }
 
 .editProfileForm form{
   display: flex;
   flex-direction: column;
   width: 294px;
-  height: 177px;
   align-items: center;
   justify-content: space-between;
 }
@@ -391,6 +430,7 @@ button:hover {
   display: flex;
   justify-content: center;
   align-content: center;
+  margin-top: 70px;
 }
 
 /* icons */ 
@@ -399,179 +439,177 @@ button:hover {
   color: red;
 }
 
+.empty-heart{
+  color: red;
+}
+
+.welcomeProfile {
+  display: none;
+  font-family: 'Comfortaa', cursive;
+  letter-spacing: 2px;
+  color:rgb(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  margin: 1.3rem auto;
+}
 
 /*   Fim da página de perfil:  */
-
-/* Função de editar receitas:  */
-
-.current-option-edit-recipe {
-  display: none;
-}
-
-.textarea-edit-recipe {
-  resize: none;
-  width: 200px;
-  height: 100px;
-  border: 1px solid rgb(247, 193, 245);
-}
-
-.input-edit-recipe, .option-edit-recipe, .select-edit-recipe {
-  width: 100px;
-  background-color: rgb(248, 222, 247);
-}
-
-.post-date {
-  font-size: 14px;
-}
-
-.userLevel {
-  align-self: center;
-}
-
-.title-level {
-  font-size: 14px;
-  display: flex;
-  justify-content: space-between;
-  margin-top: 4px;
-}
-
-.like-date {
-  justify-content: space-between;
-  display: flex;
-}
-
-.userAuthor {
-  font-size: 14px;
-  width: 50%;
-}
-/* Fim de função de editar receitas:  */
 
 /* =====================================  HEADER ===================================== */
 .icons-header {
   font-size: 24px;
+
 }
 
-ul {
-  margin: 0;
-  padding: 0;
-}
-
-a {
-  text-decoration: none;
-  color: #000;
-}
-
-#header {
-  box-sizing: border-box;
-  height: 70px;
-  padding: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+#headerContainer {
+  width: 100%;
   background-color: #7C2946;
   color: #F6C324;
-  flex-wrap: wrap;
+  position: fixed;
+  top: 0;
+  z-index: 98;
 }
 
-#menu {
+#header,  #headerSearchPage {
+  box-sizing: border-box;
+  height: 70px;
   display: flex;
-  list-style: none;
-  gap: .5rem;
+  align-items: center;
+  position: relative;
+  flex-wrap: nowrap;
+}
+
+.headerSearchPageContainer {
+  width: 100%;
+  background-color: #7C2946;
   color: #F6C324;
+  overflow: hidden;
 }
 
-#menu a {
-  display: block;
-  padding: .5rem;
-}
-
-#btn-mobile {
-  display: none;
+.header-icon {
+  margin-top: 15px;
+  margin-right: 15px;
 }
 
 .btnOk {
-width: 4rem;
-height: 2rem;
-border-radius: 5px;
-background-color: var(--coral-haze);
+  width: 4rem;
+  height: 2rem;
+  border-radius: 5px;
+  background-color: var(--coral-haze);
 }
 
 .notice-header-p {
   color: var(--red-plum);
 }
 
-@media (max-width: 600px) {
+#menu {
+  display: block;
+  position: absolute;
+  width: 70%;
+  z-index: 98;
+  background-color: var(--coral-haze);
+  /* transition: .2s; */
+  visibility: hidden;
+  left: 0;
+  pointer-events: all;
+  list-style: none;
+  gap: .5rem;
+  margin: 0;
+  padding: 0;
+}
 
-  #menu {
-    display: block;
-    position: absolute;
-    width: 43%;
-    z-index: 1000;
-    background-color: var(--coral-haze);
-    /* transition: .2s; */
-    visibility: hidden;
-    left: 0;
-    pointer-events: all;
-  }
+#menu a {
+  margin: 0 1rem;
+  border-bottom: 2px solid rgba(0, 0, 0, .05);
+  display: block;
+  padding: 0.5rem;
+  text-decoration: none;
+  color: #000;
+}
 
-  #menu a {
-    padding: 1rem 0;
-    margin: 0 1rem;
-    border-bottom: 2px solid rgba(0, 0, 0, .05);
-  }
+#nav.active #menu {
+  visibility: visible;
+  top: 70px;
+}
 
-  #nav.active #menu {
-    visibility: visible;
-    top: 70px;
-  }
+#btn-mobile {
+  display: flex;
+  border: none;
+  background: none;
+  cursor: pointer;
+  gap: 0.5rem;
+  padding: .5rem 1rem;
+  margin-right: 1rem;
+}
 
-  #btn-mobile {
-    display: flex;
-    border: none;
-    background: none;
-    cursor: pointer;
-    /* font-size: 1rem; */
-    gap: 0.5rem;
-    padding: .5rem 1rem;
-   
-  }
+#hamburger {
+  border-top: 2px solid;
+  width: 20px;
+}
 
-  #hamburger {
-    border-top: 2px solid;
-    width: 20px;
+#hamburger::after, #hamburger::before {
+  display: block;
+  position: relative;
+  content: '';
+  background-color: #000;
+  width: 20px;
+  height: 2px;
+  margin-top: 5px;
+  color: #F6C324;
+  transition: 0.3s;
+}
 
-  }
+#nav.active #hamburger::after {
+  transform: rotate(135deg);
+}
 
-  #hamburger::after, #hamburger::before {
-    display: block;
-    position: relative;
-    content: '';
-    background-color: #000;
-    width: 20px;
-    height: 2px;
-    margin-top: 5px;
-    color: #F6C324;
-    transition: 0.3s;
-  }
+#nav.active #hamburger::before {
+  transform: rotate(-135deg);
+}
 
-  #nav.active #hamburger::after {
-    transform: rotate(135deg);
-  }
+.searchPage {
+  position: fixed;
+  opacity: 0;
+  left: 0px;
+  top: 70px;
+  right: 0px;
+  bottom: 0px;
+  background-color: var(--pantone-142c);
+  transition: 200ms ease-in-out;
+  pointer-events: none; /*o valor none instrui o evento do mouse a "passar" o elemento e tudo que está "abaixo" deste elemento.*/
+  z-index: 99;
+  color: black;
+}
 
-  #nav.active #hamburger::before {
-    transform: rotate(-135deg);
-  }
+.searchPage.active {
+  pointer-events: all;
+  opacity: 1;
 }
 
 /* final do header */
 
+
+/* ========================================  FOOTER ===================================== */
+
+footer {
+  background-color:gray;
+  flex-shrink: 0;
+  padding: 10px;
+  text-align: center;
+  height: 58px;
+}
+
+footer a {
+ color:#000 
+}
+
 /* =================================  Página de feed: =================================== */
 
 .div-recipe {
-  /* background-color: var(--russet-orange); */
-  background-color: rgb(219, 219, 219);
+  background-color: #f0f0f0;
+  /* background-color: rgb(219, 219, 219); */
   margin: 2rem auto;
-  /* color: black; */
+  /* padding: 1re/ auto; */
   box-shadow: 3px 3px 3px black;
   display: block;
   border-radius: 5px;
@@ -579,11 +617,10 @@ background-color: var(--coral-haze);
 }
 
 .recipe-title {
-  background-color: var(--red-plum);
-  /* background-color: rgb(255, 81, 0); */
+  /* background-color: var(--red-plum); */
+  background-color: var(--russet-orange);
   border-radius: 5px 5px 0 0;
-  color:var(--pantone-142c);
-  /* color: black; */
+  /* color:var(--pantone-142c); */
   margin: 0px;
   padding: 5px;
   width: 100%;
@@ -664,13 +701,19 @@ background-color: var(--coral-haze);
 
 .menu-recipeButton {
   float: right;
-  /* background-color: #D3D95F; */
-  display: none;
+  visibility: hidden;
+  display: flex;
   border: none;
   background-color: transparent;
   color: var(--pantone-142c);
   height: 100%;
   position: relative;
+  font-size: 20px;
+}
+
+.menu-recipeButton span {
+  line-height: 1.9rem;
+  font-size: 35px;
 }
 
 .menu-button span {
@@ -691,7 +734,6 @@ background-color: var(--coral-haze);
 .recipeMenu li {
   border-bottom: 2px solid rgba(0, 0, 0, .05);
   list-style-type: none;
-  /* margin: 1rem 1rem; */
 }
 
 .recipeMenu li:hover {
@@ -724,6 +766,142 @@ background-color: var(--coral-haze);
   width: 100%;
 }
 
+.feedSection {
+  margin-top: 90px;
+}
+
+.numLikes {
+  margin-left: 5px;
+}
+
+/* Função de editar receitas:  */
+
+.current-option-edit-recipe {
+  display: none;
+}
+
+.textarea-edit-recipe {
+  resize: none;
+  width: 200px;
+  height: 100px;
+  border: 1px solid rgb(247, 193, 245);
+}
+
+.input-edit-recipe, .option-edit-recipe, .select-edit-recipe {
+  width: 100px;
+  background-color: rgb(248, 222, 247);
+}
+
+.post-date {
+  font-size: 14px;
+}
+
+.userLevel {
+  align-self: center;
+}
+
+.title-level {
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 4px;
+}
+
+.like-date {
+  justify-content: space-between;
+  display: flex;
+}
+
+.userAuthor {
+  font-size: 14px;
+  width: 50%;
+}
+/* Fim de função de editar receitas:  */
+
+
+
+
+/* =================================  Página de search =================================== */
+
+.searchBox {
+  position: relative;
+  height: 35px;
+  float: right;
+  overflow: hidden;    
+  -webkit-transition: width 0.3s;
+  transition: width 0.3s;
+  margin-right: 1rem;
+  width: 100%;
+}
+
+.inputSearch {
+  top: 0;
+  right: 0;
+  border: 0;
+  outline: 0;
+  background: #dcddd8;
+  width: 100%;
+  height: 35px;
+  padding: 0px 35px 0px 15px;
+  font-size: 20px;
+  color: #000;
+}
+
+.inputSearch:focus {
+  box-shadow: 0 0 0 0;
+}
+
+.inputSearch::placeholder {
+  font-size: 0.8rem;
+}
+
+.searchbox-icon,
+.submit-search {
+  width: 35px;
+  height: 35px;
+  display: block;
+  position: absolute;
+  top: 0;
+  font-size: 22px;
+  right: 0;
+  border: 0;
+  outline: 0;
+  line-height: 35px;
+  text-align: center;
+  cursor: pointer;
+  color: #dcddd8;
+  background: #172b3c;
+}
+.goback-icon {
+  width: 35px;
+  height: 35px;
+  display: block;
+  font-size: 22px;
+  border: 0;
+  outline: 0;
+  line-height: 35px;
+  text-align: center;
+  cursor: pointer;
+  color: #dcddd8;
+  background-color: transparent;
+  margin: auto 1rem;
+}
+
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(200%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.searchContainer {  
+  /* This section calls the slideInFromLeft animation we defined above */
+  animation: 0.7s ease-out 0s 1 slideInFromRight;
+}
+
+
 @media screen and (min-width: 481px) and (max-width: 768px){
   body {
     background-image: url("https://www.toptal.com/designers/subtlepatterns/patterns/food.png");
@@ -734,10 +912,23 @@ background-color: var(--coral-haze);
     width: 80%;
   }
 
+  .recipeInfo-box {
+    height: 57px;
+  }
+
+  .post-photo {
+    height: 250px;
+  }
+ 
 }
 
 @media screen and (min-width: 769px){
+
   body {
+    background-color: rgb(219, 219, 219);
+  }
+
+  .screenContainerBody {
     background-image: url("https://www.toptal.com/designers/subtlepatterns/patterns/food.png");
     /* Background pattern from Toptal Subtle Patterns */
   }
@@ -765,5 +956,104 @@ background-color: var(--coral-haze);
     padding: 5%;
   }
 
+  .recipeInfo-box {
+    height: 67px;
+  }
   
+  .div-recipe {
+    max-width: 500px;
+    width: 90%;
+  }
+
+  .post-photo {
+    height: 260px;
+  }
+
+  .postRecipeForm {
+    width: 700px;
+    padding: 25px 50px;
+    background-color: var(--pantone-142c);
+  }
+
+  #post-recipe-title, #recipes-title {
+    width: 630px;
+  }
+
+  #menu {
+    display: flex;
+    visibility: visible;
+    background-color: transparent;
+    width: auto;
+    position: relative;
+    flex-wrap: nowrap;
+  }
+
+  #menu a{
+    border: none;
+    margin: auto;
+    color: var(--pantone-142c);
+  }
+
+  #btn-mobile {
+    display: none;
+  }
+
+  #header {
+    justify-content: space-around;
+  }
+
+  .mainContent {
+    justify-content: flex-start;
+    margin: 0;
+  }
+
+  .profile-nav-bar {
+    position: fixed;
+    float: left;
+    width: 300px;
+    margin-top: 70px;
+    margin-bottom: 0;
+    border-radius: 0;
+    /* height: calc(100% - 109px); */
+    height: calc(100% - 70px);
+  }
+
+  .profileInfo {
+    margin-top: 60px;
+  }
+
+  footer {
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    height: 39px;
+  }
+
+  footer a {
+    margin-left: 1rem;
+  }
+
+  .editProfileForm {
+    top: 100px;
+  }
+
+  .myrecipesSection, .profileSection {
+    float: left;
+    width: calc(100% - 300px);
+    margin-left: 300px;
+    margin-top: 70px;
+  }
+
+  .welcomeProfile {
+    position: absolute;
+    top: 70px;
+    left: 300px;
+    width: calc(100% - 300px);
+    height: calc(100% - 109px);
+    font-size: 2rem;
+    margin: 0;
+  }
+
+
 }
+

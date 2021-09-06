@@ -6,29 +6,33 @@ import profile from './index.js';
 
 export default () => {
   const profileInfoContainer = document.createElement('div');
+  profileInfoContainer.setAttribute('class', 'padding-bottom25');
   profileInfoContainer.append(profile());
+
   const profileSection = document.createElement('section');
+  profileSection.setAttribute('class', 'profileSection');
+
   const profileInfoContent = `
-          <aside class="editProfileForm">
-            <div class="profileChangesDiv">
-              <form id="profileChanges">
-                <input id="name" placeholder="nome"></input>
-                <input id="email" placeholder="email"></input>
-                <select id="userLevel" name="level"> 
-                <option value="" selected disabled;>Nível de Cozinha:</option>
-                <option value="<i class='fas fa-fire-extinguisher'></i>&nbspQueima-panela">Queima-panela</option>
-                <option value="<i class='fas fa-cookie'></i>&nbspCotidiano">Cotidiano</option>
-                <option value="<i class='fas fa-cocktail'></i>&nbspAmador(a)">Amador(a)</option>
-                <option value="<i class='fas fa-bread-slice'></i>&nbspProfissional/Chef">Profissional/Chef</option>
-                <option value="<i class='fas fa-mitten'></i>&nbspMaster/Nível vovó">Master/Nível vovó</option>
-                </select>
-                <div id="notice"></div>
-                <button id="saveChanges" class="btn-logging">Salvar alterações</button>
-              </form>
-            </div>
-          <aside>
-  
-          `;
+    <aside class="editProfileForm">
+      <div class="profileChangesDiv">
+        <form id="profileChanges">
+          <input id="name" class="inputProfile" placeholder="Nome"></input>
+          <input id="email" class="inputProfile" placeholder="email"></input>
+          <select id="userLevel" class="inputProfile" name="level"> 
+          <option value="" selected disabled;>Nível de Cozinha:</option>
+          <option value="<i class='fas fa-fire-extinguisher'></i>&nbspQueima-panela">Queima-panela</option>
+          <option value="<i class='fas fa-cookie'></i>&nbspCotidiano">Cotidiano</option>
+          <option value="<i class='fas fa-cocktail'></i>&nbspAmador(a)">Amador(a)</option>
+          <option value="<i class='fas fa-bread-slice'></i>&nbspProfissional/Chef">Profissional/Chef</option>
+          <option value="<i class='fas fa-mitten'></i>&nbspMaster/Nível vovó">Master/Nível vovó</option>
+          </select>
+          <div id="notice"></div>
+          <button id="saveChanges" class="saveChanges">Salvar alterações</button>
+        </form>
+      </div>
+    <aside>
+  `;
+
   profileSection.innerHTML = profileInfoContent;
   profileInfoContainer.append(profileSection);
 
