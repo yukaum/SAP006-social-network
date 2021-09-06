@@ -100,7 +100,7 @@ export function addPost(post) {
         </div>
         
         <div class="recipeInfo-box">
-        <select class="select-edit-recipe id="editCost">
+        <select class="select-edit-recipe" id="editCost">
           <option class="current-option-edit-recipe" value=${post.data().preco}>${post.data().preco}</option>
           <option class="option-edit-recipe" value="$"> $ </option>
           <option class="option-edit-recipe" value="$$"> $$ </option>
@@ -111,7 +111,7 @@ export function addPost(post) {
         </div>
         
         <div class="recipeInfo-box">
-        <select class="select-edit-recipe id="editCategory">
+        <select class="select-edit-recipe" id="editCategory">
           <option class="current-option-edit-recipe" value=${post.data().categoria}>${post.data().categoria}</option>
           <option class="option-edit-recipe" value="Carnes"> Carnes </option>
           <option class="option-edit-recipe" value="Bebidas"> Bebidas </option>
