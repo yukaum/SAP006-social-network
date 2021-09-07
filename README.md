@@ -30,6 +30,7 @@ FoodLovers é uma rede social pensada para os amantes de culinária, desde amado
 
 ## Histórias de Usuários
 
+Ao fazer pesquisa com potenciais usuários, construímos nossas histórias de usuários.
 ![Histórias de Usuários](src/image/historiasDeUsuarios.png?raw=true)
 ![Pesquisa de Usuários](src/image/paletadecores.jpeg)
 ![Pesquisa de Usuários](src/image/preferencias.jpeg)
@@ -41,7 +42,7 @@ De acordo com o resultado dos testes de usabilidade, alteramos as cores iniciais
 
 ## Produto final 
 
-![Vídeo de Apresentação][(src/image/nissin.jpj)](https://www.loom.com/share/692d90e9334c4d71bc1e0b6ddacd6614)
+[![Vídeo de Apresentação](src/image/nissin.jpj)](https://www.loom.com/share/692d90e9334c4d71bc1e0b6ddacd6614)
 
 ## Tecnologias
 
