@@ -20,7 +20,7 @@ FoodLovers é uma rede social pensada para os amantes de culinária, desde amado
 ## Layout
 
 - Protótipos de baixa fidelidade
-![Protótipos de baixa fidelidade](src/image/prototipo01.png?raw=true)
+![Protótipos de baixa fidelidade](src/image/prototipo01.jpeg?raw=true)
 
 - Protótipos de alta fidelidade
 ![Protótipos de baixa fidelidade](src/image/prototipoAltaFidelidade.png?raw=true)
@@ -41,7 +41,7 @@ De acordo com o resultado dos testes de usabilidade, alteramos as cores iniciais
 
 ## Produto final 
 
-![Video de Apresentação](src/image/FoodLovers.mp4)
+![Video de Apresentação](src/image/FoodLovers.MP4)
 
 ## Tecnologias
 
