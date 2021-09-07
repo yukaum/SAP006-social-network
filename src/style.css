@@ -29,7 +29,7 @@ body {
 }
 
 #root {
-  flex: 1 0 auto;
+  flex: 1 0 auto; /*flex-grow | flex-shrink | flex-basis*/
 }
 
 .screenContainer, .screenContainerBody {
@@ -491,6 +491,10 @@ input[type="file"] {
   flex-wrap: nowrap;
 }
 
+#headerSearchPage {
+  justify-content: center;
+}
+
 .headerSearchPageContainer {
   width: 100%;
   background-color: var(--russet-orange);
@@ -844,7 +848,7 @@ footer a {
   -webkit-transition: width 0.3s;
   transition: width 0.3s;
   margin-right: 1rem;
-  width: 100%;
+  width: 700px;
 }
 
 .inputSearch {

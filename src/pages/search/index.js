@@ -1,6 +1,7 @@
 import { loadRecipe } from '../../services/index.js';
 import { addPost } from '../../components/post/index.js';
 import footer from '../../components/footer/index.js';
+import errorModal from '../../components/error/index.js';
 
 export default () => {
   const searchContainer = document.createElement('div');
@@ -17,7 +18,7 @@ export default () => {
         </button>
         
         <form class="searchBox">
-          <input type="search" id="inputSearch" class="inputSearch" placeholder="Procurar receita ou ingrediente" />
+          <input type="search" id="inputSearch" class="inputSearch" placeholder="Buscar receita ou ingrediente" />
           <button type="submit" class="submitSearch">
             <span class="searchbox-icon"> <i class="fas fa-search"></i> </span>
           </button>
@@ -28,6 +29,7 @@ export default () => {
 
   <h2 id="recipes-title" class="title"> Resultado da Busca </h2>
 
+  <div class="overlay"></div>
   <section class="searchResults"></section>
   `;
 
@@ -52,6 +54,8 @@ export default () => {
     window.history.back();
   });
 
+  const overlay = searchContainer.querySelector('.overlay');
+
   function search() {
     const searchedWords = inputSearch.value.toUpperCase().split(' ');
     searchResults.innerHTML = '';
@@ -68,6 +72,11 @@ export default () => {
         if (searchResults.childElementCount === 0) {
           searchResults.appendChild(recipeNotFound);
         }
+      })
+      .catch((error) => {
+        overlay.classList.add('active');
+        searchContainer.append(errorModal());
+        throw Error(error);
       });
   }
 
