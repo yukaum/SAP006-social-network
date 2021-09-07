@@ -3,7 +3,7 @@ import errorModal from '../../components/error/index.js';
 
 export default () => {
   const resetPasswordContainer = document.createElement('div');
-  resetPasswordContainer.setAttribute('class', 'screenContainer');
+  resetPasswordContainer.setAttribute('class', 'screenContainerBody');
 
   const resetPasswordContent = `
   <div class="div-width90 flexRowReverse">
@@ -63,6 +63,13 @@ export default () => {
   }
   const sendEmailBtn = resetPasswordContainer.querySelector('#btn-resetPassword');
   sendEmailBtn.addEventListener('click', sendResetPasswordEmail);
+
+  const body = document.querySelector('body');
+  const footerTag = body.querySelector('footer');
+
+  if (footerTag !== null) {
+    footerTag.remove();
+  }
 
   return resetPasswordContainer;
 };

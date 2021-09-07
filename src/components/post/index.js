@@ -15,10 +15,13 @@ export function addPost(post) {
     <ul class="recipeMenu">
       <li class="edit-button">
         <p> Editar 
-          <span class="material-icons"> edit </span> </p>
+          <span class="material-icons"> edit </span> 
+        </p>
       </li>
-      <li class="delete-button"> <p> Excluir 
-        <span class="material-icons"> deletep </span> </p> 
+      <li class="delete-button"> 
+        <p> Excluir 
+          <span class="material-icons"> deletep </span>
+        </p> 
       </li>
     </ul>
 
@@ -29,19 +32,19 @@ export function addPost(post) {
         <p> Salvar alterações
         <i class="fas fa-save"></i> </p>
       </li>
-      <li id="cancelEditButton" class="delete-button"> <p> Cancelar &nbsp
-      <i class="fas fa-undo-alt"></i> </p> 
+      <li id="cancelEditButton" class="delete-button">
+        <p> Cancelar &nbsp
+          <i class="fas fa-undo-alt"></i>
+        </p> 
       </li>
     </ul>
 
 
 
-
     <div class="toggle-section">
       <h3 class="title recipe-title"> ${post.data()['nome da receita']} </h3>
-      <div> 
-        <img class="post-photo" src="image/nissin.jpg">
-      </div>
+    
+      <div id="photo-${post.id}"> </div>
       
       <div class="recipeBody"> 
         <div class="recipe-info">
@@ -80,83 +83,80 @@ export function addPost(post) {
 
 
 
-
       <div id="recipeEditBody" class="recipeBody"> 
-      <div class="recipe-info">
+        <div class="recipe-info">
 
-        <div class="recipeInfo-box">
-          <span class="material-icons"> schedule </span>
-          <input id="editTime" type="number" class="input-edit-recipe" value=${post.data()['tempo de preparo']} placeholder="em minutos...">
-        </div>
-        
-        <div class="recipeInfo-box">
-        <select class="select-edit-recipe" id="editDifficulty">
+          <div class="recipeInfo-box">
+            <span class="material-icons"> schedule </span>
+            <input id="editTime" type="number" class="input-edit-recipe" value=${post.data()['tempo de preparo']} placeholder="em minutos...">
+          </div>
+          
+          <div class="recipeInfo-box">
+            <select class="select-edit-recipe" id="editDifficulty">
               <option class="current-option-edit-recipe" value=${post.data().dificuldade}>${post.data().dificuldade}</option>
               <option class="option-edit-recipe" value="Fácil"> Fácil </option>
               <option class="option-edit-recipe" value="Média"> Média </option>
               <option class="option-edit-recipe" value="Alta"> Alta </option>
-        </select>
-         
+            </select>
+          </div>
+          
+          <div class="recipeInfo-box">
+            <select class="select-edit-recipe" id="editCost">
+              <option class="current-option-edit-recipe" value=${post.data().preco}>${post.data().preco}</option>
+              <option class="option-edit-recipe" value="$"> $ </option>
+              <option class="option-edit-recipe" value="$$"> $$ </option>
+              <option class="option-edit-recipe" value="$$$"> $$$ </option>
+              <option class="option-edit-recipe" value="$$$$"> $$$$ </option>
+            </select>  
+            <p>custo</p>
+          </div>
+          
+          <div class="recipeInfo-box">
+            <select class="select-edit-recipe" id="editCategory">
+              <option class="current-option-edit-recipe" value=${post.data().categoria}>${post.data().categoria}</option>
+              <option class="option-edit-recipe" value="Carnes"> Carnes </option>
+              <option class="option-edit-recipe" value="Bebidas"> Bebidas </option>
+              <option class="option-edit-recipe" value="Massas"> Massas </option>
+              <option class="option-edit-recipe" value="Doces"> Doces </option>
+              <option class="option-edit-recipe" value="Outros"> Outros </option>
+            </select>  
+          </div>
         </div>
+
+        <h3 class="title center-title recipe-title">Ingredientes</h3>
+          <div>
+            <textarea id="editIngredients-${post.id}" class="textarea-edit-recipe">${post.data().ingredientes.replaceAll('<br />', '\n')}</textarea>
+          </div>
         
-        <div class="recipeInfo-box">
-        <select class="select-edit-recipe id="editCost">
-          <option class="current-option-edit-recipe" value=${post.data().preco}>${post.data().preco}</option>
-          <option class="option-edit-recipe" value="$"> $ </option>
-          <option class="option-edit-recipe" value="$$"> $$ </option>
-          <option class="option-edit-recipe" value="$$$"> $$$ </option>
-          <option class="option-edit-recipe" value="$$$$"> $$$$ </option>
-        </select>  
-          <p>custo</p>
-        </div>
-        
-        <div class="recipeInfo-box">
-        <select class="select-edit-recipe id="editCategory">
-          <option class="current-option-edit-recipe" value=${post.data().categoria}>${post.data().categoria}</option>
-          <option class="option-edit-recipe" value="Carnes"> Carnes </option>
-          <option class="option-edit-recipe" value="Bebidas"> Bebidas </option>
-          <option class="option-edit-recipe" value="Massas"> Massas </option>
-          <option class="option-edit-recipe" value="Doces"> Doces </option>
-          <option class="option-edit-recipe" value="Outros"> Outros </option>
-        </select>  
+        <h3 class="title center-title recipe-title">Modo de preparo</h3>
+        <div>
+          <textarea id="editPreparationMode-${post.id}" class="textarea-edit-recipe">${post.data()['modo de preparo'].replaceAll('<br />', '\n')}</textarea> 
         </div>
 
       </div>
-
-      <h3 class="title center-title recipe-title">Ingredientes</h3>
-      <div class="">
-        <textarea id="editIngredients-${post.id}" class="textarea-edit-recipe">${post.data().ingredientes.replaceAll('<br />', '\n')}</textarea>
-      </div>
-      
-      <h3 class="title center-title recipe-title">Modo de preparo</h3>
-      <div>
-        <textarea id="editPreparationMode-${post.id}" class="textarea-edit-recipe">${post.data()['modo de preparo'].replaceAll('<br />', '\n')}</textarea> 
-      </div>
-
-    </div>
-
     </div>
 
     <div class="div-width100 recipe-title recipe-footer">
-
       <div class="like-date">
-      <div class="like">
-        <button class="recipeLikes" data-like= ${post.id}><i id="likes-${post.id}" class="far fa-heart"></i></button>
+        <div class="like">
+          <button class="recipeLikes" data-like= ${post.id}>
+            <i id="likes-${post.id}" class="far fa-heart"></i>
+          </button>
           <p class="numLikes"> ${post.data().likes.length || 0}</p>
-        <span class="material-icons commentIcon">insert_comment</span> ${post.data().comments.length}
-      </div>
-      <p class="post-date"> ${post.data().data} </p>
+          <span class="material-icons commentIcon">insert_comment</span> ${post.data().comments.length}
+        </div>
+        <p class="post-date"> ${post.data().data} </p>
       </div>
 
       <div class="title-level">
-      <p class="userAuthor"> Por ${post.data().autor} </p>
-      <p class="userLevel">${post.data().nivel}</p>
+        <p class="userAuthor"> Por ${post.data().autor} </p>
+        <p class="userLevel">${post.data().nivel}</p>
       </div>
-    </div>
+    </div>  
 
     <div class="popup" data-toggle="popup">
       <h2> Deletar Receita </h2>
-      <p> Você tem certeza ?
+      <p> Você tem certeza ? </p>
       <div class="div-btns-popup">
         <button type="button" class="btn-popup btn-yes">Deletar</button>
         <button type="button" class="btn-popup btn-no">Cancelar</button>
@@ -170,8 +170,15 @@ export function addPost(post) {
 
   const popup = postContainer.querySelector('.popup');
   const overlay = postContainer.querySelector('.overlay');
-  const toggleDiv = postContainer.querySelector('.toggle-section');
-  const recipeBody = toggleDiv.querySelector('.recipeBody');
+
+  const recipePhoto = postContainer.querySelector(`#photo-${post.id}`);
+  if (post.data().fotoUrl === null) {
+    recipePhoto.innerHTML = '<img class="post-photo" src="image/nissin.jpg"></img>';
+  } else {
+    recipePhoto.innerHTML = `<img class="post-photo" src=${post.data().fotoUrl}></img>`;
+  }
+
+  const recipeBody = postContainer.querySelector('.recipeBody');
   const recipeEditBody = postContainer.querySelector('#recipeEditBody');
   const postPhoto = postContainer.querySelector('.post-photo');
   const recipeMenu = postContainer.querySelector('.recipeMenu');
@@ -317,7 +324,7 @@ export function addPost(post) {
   cancelEditButton.addEventListener('click', cancelEditButtonDom);
 
   if (userUid === post.data().user_id) {
-    menuButton.style.display = 'block';
+    menuButton.style.visibility = 'visible';
   }
 
   return postContainer;
