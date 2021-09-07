@@ -135,18 +135,18 @@ export const likesPost = (postId) => firebase.firestore().collection('recipes').
 
   .then((docPost) => {
     const likeUsers = docPost.data().likes;
-    let test;
+    let firebaseLikes;
 
     if (likeUsers.includes(getUserData().uid)) {
-      test = firebase.firestore().collection('recipes').doc(postId).update({
+      firebaseLikes = firebase.firestore().collection('recipes').doc(postId).update({
         likes: firebase.firestore.FieldValue.arrayRemove(getUserData().uid),
       });
     } else {
-      test = firebase.firestore().collection('recipes').doc(postId).update({
+      firebaseLikes = firebase.firestore().collection('recipes').doc(postId).update({
         likes: firebase.firestore.FieldValue.arrayUnion(getUserData().uid),
       });
     }
-    return test;
+    return firebaseLikes;
   });
 
 export const numLikes = (postId) => firebase.firestore().collection('recipes').doc(postId).get();

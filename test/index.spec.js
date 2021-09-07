@@ -89,7 +89,7 @@ describe('return second function', () => {
   });
 });
 
-describe('should render page register correctly', () => {
+describe('should render page signUp correctly', () => {
   it('should be div', () => {
     const divSignUp = signUpScreen();
     expect(divSignUp.tagName).toBe('DIV');

@@ -120,7 +120,7 @@ body {
   margin-right: 5px;
 }
 
-button::before {
+button:hover {
   cursor: pointer;
 }
 
@@ -742,7 +742,7 @@ footer a {
   position: absolute;
   width: 200px;
   background-color: rgb(219, 219, 219);
-  top: 31px;
+  top: 30px;
   visibility: hidden;
   right: 0;
   pointer-events: all;

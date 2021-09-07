@@ -173,7 +173,7 @@ export function addPost(post) {
 
   const recipePhoto = postContainer.querySelector(`#photo-${post.id}`);
   if (post.data().fotoUrl === null) {
-    recipePhoto.innerHTML = '<img class="post-photo" src="image/nissin.jpg"></img>';
+    recipePhoto.innerHTML = '<img class="post-photo" src="image/semfoto.png"></img>';
   } else {
     recipePhoto.innerHTML = `<img class="post-photo" src=${post.data().fotoUrl}></img>`;
   }
