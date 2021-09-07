@@ -22,7 +22,7 @@ html, body {
 
 body {
   font-family: 'Roboto', sans-serif;
-  background-color: var(--pantone-142c);
+  background-color: #F0F2F5;
   background-attachment: fixed;
   display: flex;
   flex-direction: column;
@@ -113,6 +113,7 @@ body {
 }
 
 .material-icons {
+  color: black;
   background-color: transparent;
   border: none;
   font-size: 1.2rem;
@@ -239,7 +240,7 @@ button::before {
 }
 
 #post-recipe-title, #recipes-title, .resetPassword-title {
-  border-bottom: 2px solid var(--red-plum);
+  border-bottom: 2px solid var(--russet-orange);
   font-weight: bolder;
 }
 
@@ -351,7 +352,7 @@ input[type="file"] {
 }
 
 .profile-nav-bar{
-  background-color: #e47127;
+  background-color: #ece7e2;
   width: 244px;
   height: 290px;
   border-radius: 20px;
@@ -469,11 +470,16 @@ input[type="file"] {
 
 #headerContainer {
   width: 100%;
-  background-color: #7C2946;
-  color: #F6C324;
+  background-color: var(--russet-orange);
+  color: black;
   position: fixed;
   top: 0;
   z-index: 98;
+}
+
+#headerContainer h1 {
+  font-family: 'Gochi Hand', cursive;
+  font-size: 42px;
 }
 
 #header,  #headerSearchPage {
@@ -487,7 +493,7 @@ input[type="file"] {
 
 .headerSearchPageContainer {
   width: 100%;
-  background-color: #7C2946;
+  background-color: var(--russet-orange);
   color: #F6C324;
   overflow: hidden;
 }
@@ -513,7 +519,7 @@ input[type="file"] {
   position: absolute;
   width: 70%;
   z-index: 98;
-  background-color: var(--coral-haze);
+  background-color: var(--russet-orange);
   /* transition: .2s; */
   visibility: hidden;
   left: 0;
@@ -526,11 +532,12 @@ input[type="file"] {
 
 #menu a {
   margin: 0 1rem;
-  border-bottom: 2px solid rgba(0, 0, 0, .05);
+  border-bottom: 2px solid rgba(0,0,0,.05);
   display: block;
   padding: 0.5rem;
   text-decoration: none;
   color: #000;
+  font-size: 19px;
 }
 
 #nav.active #menu {
@@ -545,7 +552,6 @@ input[type="file"] {
   cursor: pointer;
   gap: 0.5rem;
   padding: .5rem 1rem;
-  margin-right: 1rem;
 }
 
 #hamburger {
@@ -598,11 +604,12 @@ input[type="file"] {
 /* ========================================  FOOTER ===================================== */
 
 footer {
-  background-color:gray;
+  background-color:var(--russet-orange);
   flex-shrink: 0;
   padding: 10px;
   text-align: center;
   height: 58px;
+  width:100%;
 }
 
 footer a {
@@ -616,7 +623,7 @@ footer a {
   /* background-color: rgb(219, 219, 219); */
   margin: 2rem auto;
   /* padding: 1re/ auto; */
-  box-shadow: 3px 3px 3px black;
+  box-shadow: 0 1px 2px rgba(0,0,0, 0.2);
   display: block;
   border-radius: 5px;
   position: relative;
@@ -624,7 +631,7 @@ footer a {
 
 .recipe-title {
   /* background-color: var(--red-plum); */
-  background-color: var(--russet-orange);
+  background-color: rgb(219, 219, 219);
   border-radius: 5px 5px 0 0;
   /* color:var(--pantone-142c); */
   margin: 0px;
@@ -729,8 +736,8 @@ footer a {
 .recipeMenu {
   display: block;
   position: absolute;
-  width: 130px;
-  background-color: var(--coral-haze);
+  width: 200px;
+  background-color: rgb(219, 219, 219);
   top: 31px;
   visibility: hidden;
   right: 0;
@@ -909,10 +916,6 @@ footer a {
 
 
 @media screen and (min-width: 481px) and (max-width: 768px){
-  body {
-    background-image: url("https://www.toptal.com/designers/subtlepatterns/patterns/food.png");
-    /* Background pattern from Toptal Subtle Patterns */
-  }
 
   .initialForm {
     width: 80%;
@@ -929,15 +932,6 @@ footer a {
 }
 
 @media screen and (min-width: 769px){
-
-  body {
-    background-color: rgb(219, 219, 219);
-  }
-
-  .screenContainerBody {
-    background-image: url("https://www.toptal.com/designers/subtlepatterns/patterns/food.png");
-    /* Background pattern from Toptal Subtle Patterns */
-  }
 
   .flexRowReverse {
     display: flex;
@@ -978,7 +972,6 @@ footer a {
   .postRecipeForm {
     width: 700px;
     padding: 25px 50px;
-    background-color: var(--pantone-142c);
   }
 
   #post-recipe-title, #recipes-title {
@@ -997,7 +990,7 @@ footer a {
   #menu a{
     border: none;
     margin: auto;
-    color: var(--pantone-142c);
+    color: black;
   }
 
   #btn-mobile {

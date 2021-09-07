@@ -101,7 +101,7 @@ export function addPost(post) {
           </div>
           
           <div class="recipeInfo-box">
-            <select class="select-edit-recipe id="editCost">
+            <select class="select-edit-recipe" id="editCost">
               <option class="current-option-edit-recipe" value=${post.data().preco}>${post.data().preco}</option>
               <option class="option-edit-recipe" value="$"> $ </option>
               <option class="option-edit-recipe" value="$$"> $$ </option>
@@ -112,7 +112,7 @@ export function addPost(post) {
           </div>
           
           <div class="recipeInfo-box">
-            <select class="select-edit-recipe id="editCategory">
+            <select class="select-edit-recipe" id="editCategory">
               <option class="current-option-edit-recipe" value=${post.data().categoria}>${post.data().categoria}</option>
               <option class="option-edit-recipe" value="Carnes"> Carnes </option>
               <option class="option-edit-recipe" value="Bebidas"> Bebidas </option>
@@ -178,12 +178,7 @@ export function addPost(post) {
     recipePhoto.innerHTML = `<img class="post-photo" src=${post.data().fotoUrl}></img>`;
   }
 
-  const toggleDiv = postContainer.querySelector('.toggle-section');
-  toggleDiv.addEventListener('click', () => {
-    toggleDiv.querySelector('.recipeBody').classList.toggle('showBlock');
-  });
-
-  const recipeBody = toggleDiv.querySelector('.recipeBody');
+  const recipeBody = postContainer.querySelector('.recipeBody');
   const recipeEditBody = postContainer.querySelector('#recipeEditBody');
   const postPhoto = postContainer.querySelector('.post-photo');
   const recipeMenu = postContainer.querySelector('.recipeMenu');
