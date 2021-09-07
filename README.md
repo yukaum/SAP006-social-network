@@ -41,7 +41,7 @@ De acordo com o resultado dos testes de usabilidade, alteramos as cores iniciais
 
 ## Produto final 
 
-[![Watch the video](src/image/FoodLovers.MP4)]
+![Vídeo de Apresentação][(src/image/FoodLovers.MP4)](src/image/FoodLovers.MP4)
 
 ## Tecnologias
 
