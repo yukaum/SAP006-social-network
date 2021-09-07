@@ -2,11 +2,11 @@ import { signIn, signInWithGoogle } from '../../services/index.js';
 
 export default () => {
   const loginScreenContainer = document.createElement('div');
-  loginScreenContainer.setAttribute('class', 'screenContainer');
+  loginScreenContainer.setAttribute('class', 'screenContainerBody');
 
   const loginScreenButtons = `
   <div class = "div-width90 flexRowReverse">
-      <img class="logo" src="image/logotipo.png">
+    <img class="logo" src="image/Logotipo.png">
     
     <form class="initialForm">
       <h1 class="title"> Entrar </h1>
@@ -14,6 +14,7 @@ export default () => {
       <input type="password" id="input-password" class="signIn-input" placeholder="Senha">
       <p id=passwordReset> Esqueceu sua senha? <a href="#recuperarSenha" class="ancor"> Clique aqui </a></p>
       <div id="notice" class="notice"> </div>
+
       <button type="button" id="enter-acc"  class="btn-login">Entrar</button>
       <button type="button" id="btn-google" class="btn-login"> <span class="google-icon"></span>Entrar com Google</button>
       <button type="button" id="sign-up"  class="btn-login">Criar conta</button>
