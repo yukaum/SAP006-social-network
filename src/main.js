@@ -30,21 +30,22 @@ const routes = () => {
         case '#postRecipe':
           main.appendChild(addRecipe());
           break;
-        case '#recuperarSenha':
-          main.appendChild(resetPassword());
-          break;
         case '#search':
           main.appendChild(searchPage());
           break;
         default:
-          main.appendChild(loginScreen());
+          window.location.hash = '#feed';
       }
     } else {
       switch (window.location.hash) {
         case '#signUp':
           main.appendChild(signUpScreen());
           break;
+        case '#recuperarSenha':
+          main.appendChild(resetPassword());
+          break;
         default:
+          window.location.hash = '';
           main.appendChild(loginScreen());
       }
     }

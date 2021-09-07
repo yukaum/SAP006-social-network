@@ -489,6 +489,9 @@ input[type="file"] {
   align-items: center;
   position: relative;
   flex-wrap: nowrap;
+}
+
+#headerSearchPage {
   justify-content: center;
 }
 
