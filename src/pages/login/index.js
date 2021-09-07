@@ -95,5 +95,13 @@ export default () => {
   btnSignUp.addEventListener('click', () => {
     window.location.hash = '#signUp';
   });
+
+  const body = document.querySelector('body');
+  const footerTag = body.querySelector('footer');
+
+  if (footerTag !== null) {
+    footerTag.remove();
+  }
+
   return loginScreenContainer;
 };

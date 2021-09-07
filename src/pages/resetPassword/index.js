@@ -64,5 +64,12 @@ export default () => {
   const sendEmailBtn = resetPasswordContainer.querySelector('#btn-resetPassword');
   sendEmailBtn.addEventListener('click', sendResetPasswordEmail);
 
+  const body = document.querySelector('body');
+  const footerTag = body.querySelector('footer');
+
+  if (footerTag !== null) {
+    footerTag.remove();
+  }
+
   return resetPasswordContainer;
 };

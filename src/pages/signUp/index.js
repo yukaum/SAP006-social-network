@@ -76,5 +76,12 @@ export default () => {
     e.preventDefault();
     SignUpDom();
   });
+
+  const body = document.querySelector('body');
+  const footerTag = body.querySelector('footer');
+
+  if (footerTag !== null) {
+    footerTag.remove();
+  }
   return signUpScreenContainer;
 };
