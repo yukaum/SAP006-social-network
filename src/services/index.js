@@ -1,5 +1,3 @@
-// const db = firebase.firestore();
-
 export const getUserData = () => {
   const uid = localStorage.getItem('uid');
   const displayName = localStorage.getItem('displayName');
@@ -97,7 +95,8 @@ export const signUp = (email, password, signUpName) => firebase.auth()
   .then(() => localStorage.setItem('level', 'Nível não selecionado'));
 
 export const signIn = (email, password) => firebase.auth()
-  .signInWithEmailAndPassword(email, password)
+  .setPersistence(firebase.auth.Auth.Persistence.LOCAL)
+  .then(() => firebase.auth().signInWithEmailAndPassword(email, password))
   .then((credential) => getUserLevel(credential.user.uid))
   .then((level) => level.data().level)
   .then((level) => localStorage.setItem('level', level))
