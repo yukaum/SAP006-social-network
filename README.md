@@ -44,7 +44,7 @@ De acordo com o resultado dos testes de usabilidade, alteramos as cores iniciais
 
 ## Produto final 
 
-[![Vídeo de Apresentação](https://i.imgur.com/vKb2F1B.png)](https://www.loom.com/share/692d90e9334c4d71bc1e0b6ddacd6614)
+https://user-images.githubusercontent.com/83042240/132427763-26e762f6-d487-4758-a0cb-7c8d11921ead.mp4
 
 ## Tecnologias
 
