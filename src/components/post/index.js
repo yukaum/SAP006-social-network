@@ -143,7 +143,7 @@ export function addPost(post) {
             <i id="likes-${post.id}" class="far fa-heart"></i>
           </button>
           <p class="numLikes"> ${post.data().likes.length || 0}</p>
-          <span class="material-icons commentIcon">insert_comment</span> ${post.data().comments.length}
+          <!-- <span class="material-icons commentIcon">insert_comment</span> ${post.data().comments.length} -->
         </div>
         <p class="post-date"> ${post.data().data} </p>
       </div>
