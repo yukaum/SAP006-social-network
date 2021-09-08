@@ -3,13 +3,12 @@
 ## Índice
 
 - [1. Sobre](#Sobre)
-- [2. Definição de Produto](#Definição-de-produto)
-- [3. Layout](#Layout)
-- [4. Histórias de Usuários](#Histórias-de-Usuários)
-- [6. Testes de Usabilidade](#Testes-de-Usabilidade)
-- [7. Produto Final](#Produto-Final)
-- [8. Tecnologias](#Tecnologias)
-- [9. Autoras](#Autoras)
+- [2. Layout](#Layout)
+- [3. Histórias de Usuários](#Histórias-de-Usuários)
+- [4. Testes de Usabilidade](#Testes-de-Usabilidade)
+- [5. Produto Final](#Produto-Final)
+- [6. Tecnologias](#Tecnologias)
+- [7. Autoras](#Autoras)
 
 ---
 
@@ -31,20 +30,21 @@ FoodLovers é uma rede social pensada para os amantes de culinária, desde amado
 ## Histórias de Usuários
 
 Ao fazer pesquisa com potenciais usuários, construímos nossas histórias de usuários.
+
 ![Histórias de Usuários](src/image/historiasDeUsuarios.png?raw=true)
 
-A paleta de co
 ![Pesquisa de Usuários](src/image/paletadecores.jpeg)
+
 ![Pesquisa de Usuários](src/image/preferencias.jpeg)
 
 
 ## Testes de Usabilidade
 
-De acordo com o resultado dos testes de usabilidade, alteramos as cores iniciais para um layout mais "clean", possibilitando ao usuário uma melhor experiência de navegação. Também implementamos hovers nos botões para deixar o site mais intuitivo.
+De acordo com o resultado dos testes de usabilidade, alteramos as cores iniciais para um layout mais "clean", possibilitando ao usuário uma melhor experiência de navegação. Também implementamos hovers nos botões para deixar o site mais intuitivo. 
 
 ## Produto final 
 
-[![Vídeo de Apresentação](https://i.imgur.com/vKb2F1B.png)](https://www.loom.com/share/692d90e9334c4d71bc1e0b6ddacd6614)
+https://user-images.githubusercontent.com/83042240/132427763-26e762f6-d487-4758-a0cb-7c8d11921ead.mp4
 
 ## Tecnologias
 
