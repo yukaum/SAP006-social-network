@@ -7,7 +7,7 @@ export default () => {
 
   const resetPasswordContent = `
   <div class="div-width90 flexRowReverse">
-    <img class="logo" src="image/logotipo.png">
+    <img class="logo" src="image/Logotipo.png">
     
     <form id="forgotPassword-form" class="initialForm">
       <h1 class="title resetPassword-title">Redefinir Senha</h1>
